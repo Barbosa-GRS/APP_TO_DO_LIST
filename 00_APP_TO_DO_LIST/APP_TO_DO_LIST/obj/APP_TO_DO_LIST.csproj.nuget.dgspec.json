@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tcxdr\\OneDrive\\Área de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj": {}
+    "C:\\Users\\tcxdr\\OneDrive\\Área de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tcxdr\\OneDrive\\Área de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj": {
+    "C:\\Users\\tcxdr\\OneDrive\\Área de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tcxdr\\OneDrive\\Área de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj",
+        "projectUniqueName": "C:\\Users\\tcxdr\\OneDrive\\Área de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj",
         "projectName": "APP_TO_DO_LIST",
-        "projectPath": "C:\\Users\\tcxdr\\OneDrive\\Área de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj",
+        "projectPath": "C:\\Users\\tcxdr\\OneDrive\\Área de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj",
         "packagesPath": "C:\\Users\\tcxdr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tcxdr\\OneDrive\\Área de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\obj\\",
+        "outputPath": "C:\\Users\\tcxdr\\OneDrive\\Área de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tcxdr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +45,16 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Asp.Versioning.Mvc": {
+              "target": "Package",
+              "version": "[8.1.0, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

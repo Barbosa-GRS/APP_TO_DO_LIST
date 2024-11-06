@@ -1,12 +1,181 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|c:\\users\\tcxdr\\onedrive\\\u00E1rea de trabalho\\prog\\app_to_do_list\\app_to_do_list\\00_app_to_do_list\\app_to_do_list\\repository\\implementation\\repositoryimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|solutionrelative:app_to_do_list\\repository\\implementation\\repositoryimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|c:\\users\\tcxdr\\onedrive\\\u00E1rea de trabalho\\prog\\app_to_do_list\\app_to_do_list\\00_app_to_do_list\\app_to_do_list\\repository\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|solutionrelative:app_to_do_list\\repository\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|c:\\users\\tcxdr\\onedrive\\\u00E1rea de trabalho\\prog\\app_to_do_list\\app_to_do_list\\00_app_to_do_list\\app_to_do_list\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|solutionrelative:app_to_do_list\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|c:\\users\\tcxdr\\onedrive\\\u00E1rea de trabalho\\prog\\app_to_do_list\\app_to_do_list\\00_app_to_do_list\\app_to_do_list\\business\\itodolistbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|solutionrelative:app_to_do_list\\business\\itodolistbusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|c:\\users\\tcxdr\\onedrive\\\u00E1rea de trabalho\\prog\\app_to_do_list\\app_to_do_list\\00_app_to_do_list\\app_to_do_list\\business\\implementation\\todolistbusinessimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|solutionrelative:app_to_do_list\\business\\implementation\\todolistbusinessimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|c:\\users\\tcxdr\\onedrive\\\u00E1rea de trabalho\\prog\\app_to_do_list\\app_to_do_list\\00_app_to_do_list\\app_to_do_list\\controllers\\todolistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|solutionrelative:app_to_do_list\\controllers\\todolistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|c:\\users\\tcxdr\\onedrive\\\u00E1rea de trabalho\\prog\\app_to_do_list\\app_to_do_list\\00_app_to_do_list\\app_to_do_list\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|solutionrelative:app_to_do_list\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|c:\\users\\tcxdr\\onedrive\\\u00E1rea de trabalho\\prog\\app_to_do_list\\app_to_do_list\\00_app_to_do_list\\app_to_do_list\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|solutionrelative:app_to_do_list\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|c:\\users\\tcxdr\\onedrive\\\u00E1rea de trabalho\\prog\\app_to_do_list\\app_to_do_list\\00_app_to_do_list\\app_to_do_list\\model\\context\\mysqlcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|solutionrelative:app_to_do_list\\model\\context\\mysqlcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|c:\\users\\tcxdr\\onedrive\\\u00E1rea de trabalho\\prog\\app_to_do_list\\app_to_do_list\\00_app_to_do_list\\app_to_do_list\\app_to_do_list.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|solutionrelative:app_to_do_list\\app_to_do_list.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RepositoryImplementation.cs",
+              "DocumentMoniker": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\Repository\\Implementation\\RepositoryImplementation.cs",
+              "RelativeDocumentMoniker": "APP_TO_DO_LIST\\Repository\\Implementation\\RepositoryImplementation.cs",
+              "ToolTip": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\Repository\\Implementation\\RepositoryImplementation.cs",
+              "RelativeToolTip": "APP_TO_DO_LIST\\Repository\\Implementation\\RepositoryImplementation.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwBMAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T02:02:46.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\Repository\\IRepository.cs",
+              "RelativeDocumentMoniker": "APP_TO_DO_LIST\\Repository\\IRepository.cs",
+              "ToolTip": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\Repository\\IRepository.cs",
+              "RelativeToolTip": "APP_TO_DO_LIST\\Repository\\IRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T02:02:28.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ToDoListBusinessImplementation.cs",
+              "DocumentMoniker": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\Business\\Implementation\\ToDoListBusinessImplementation.cs",
+              "RelativeDocumentMoniker": "APP_TO_DO_LIST\\Business\\Implementation\\ToDoListBusinessImplementation.cs",
+              "ToolTip": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\Business\\Implementation\\ToDoListBusinessImplementation.cs",
+              "RelativeToolTip": "APP_TO_DO_LIST\\Business\\Implementation\\ToDoListBusinessImplementation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T01:22:48.535Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ToDoListController.cs",
+              "DocumentMoniker": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\Controllers\\ToDoListController.cs",
+              "RelativeDocumentMoniker": "APP_TO_DO_LIST\\Controllers\\ToDoListController.cs",
+              "ToolTip": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\Controllers\\ToDoListController.cs",
+              "RelativeToolTip": "APP_TO_DO_LIST\\Controllers\\ToDoListController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T22:39:13.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IToDoListBusiness.cs",
+              "DocumentMoniker": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\Business\\IToDoListBusiness.cs",
+              "RelativeDocumentMoniker": "APP_TO_DO_LIST\\Business\\IToDoListBusiness.cs",
+              "ToolTip": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\Business\\IToDoListBusiness.cs",
+              "RelativeToolTip": "APP_TO_DO_LIST\\Business\\IToDoListBusiness.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T22:38:57.146Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\Program.cs",
+              "RelativeDocumentMoniker": "APP_TO_DO_LIST\\Program.cs",
+              "ToolTip": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\Program.cs",
+              "RelativeToolTip": "APP_TO_DO_LIST\\Program.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAAB8AAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T18:06:58.959Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "APP_TO_DO_LIST\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\Properties\\launchSettings.json",
+              "RelativeToolTip": "APP_TO_DO_LIST\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACEAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-06T00:59:33.718Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "APP_TO_DO_LIST.csproj",
+              "DocumentMoniker": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj",
+              "RelativeDocumentMoniker": "APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj",
+              "ToolTip": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj",
+              "RelativeToolTip": "APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-05T18:13:51.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\appsettings.json",
+              "RelativeDocumentMoniker": "APP_TO_DO_LIST\\appsettings.json",
+              "ToolTip": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\appsettings.json",
+              "RelativeToolTip": "APP_TO_DO_LIST\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-05T02:26:22.673Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MySQLContext.cs",
+              "DocumentMoniker": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\Model\\Context\\MySQLContext.cs",
+              "RelativeDocumentMoniker": "APP_TO_DO_LIST\\Model\\Context\\MySQLContext.cs",
+              "ToolTip": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\Model\\Context\\MySQLContext.cs",
+              "RelativeToolTip": "APP_TO_DO_LIST\\Model\\Context\\MySQLContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T02:19:17.002Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

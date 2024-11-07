@@ -8,6 +8,7 @@ namespace APP_TO_DO_LIST.Repository
         ToDoList Update(ToDoList toDoList);
         List<ToDoList> FindAll();
         void Delete(long id);
+        bool Exists (long id);
 
     }
 }

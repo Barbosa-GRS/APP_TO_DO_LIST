@@ -50,3 +50,14 @@ C:\Users\tcxdr\OneDrive\Área de Trabalho\PROG\APP_TO_DO_LIST\APP_TO_DO_LIST\00_
 C:\Users\tcxdr\OneDrive\Área de Trabalho\PROG\APP_TO_DO_LIST\APP_TO_DO_LIST\00_APP_TO_DO_LIST\APP_TO_DO_LIST\obj\Debug\net8.0\APP_TO_DO_LIST.pdb
 C:\Users\tcxdr\OneDrive\Área de Trabalho\PROG\APP_TO_DO_LIST\APP_TO_DO_LIST\00_APP_TO_DO_LIST\APP_TO_DO_LIST\obj\Debug\net8.0\APP_TO_DO_LIST.genruntimeconfig.cache
 C:\Users\tcxdr\OneDrive\Área de Trabalho\PROG\APP_TO_DO_LIST\APP_TO_DO_LIST\00_APP_TO_DO_LIST\APP_TO_DO_LIST\obj\Debug\net8.0\ref\APP_TO_DO_LIST.dll
+C:\Users\tcxdr\OneDrive\Área de Trabalho\PROG\APP_TO_DO_LIST\APP_TO_DO_LIST\00_APP_TO_DO_LIST\APP_TO_DO_LIST\bin\Debug\net8.0\Asp.Versioning.Abstractions.dll
+C:\Users\tcxdr\OneDrive\Área de Trabalho\PROG\APP_TO_DO_LIST\APP_TO_DO_LIST\00_APP_TO_DO_LIST\APP_TO_DO_LIST\bin\Debug\net8.0\Asp.Versioning.Http.dll
+C:\Users\tcxdr\OneDrive\Área de Trabalho\PROG\APP_TO_DO_LIST\APP_TO_DO_LIST\00_APP_TO_DO_LIST\APP_TO_DO_LIST\bin\Debug\net8.0\Asp.Versioning.Mvc.dll
+C:\Users\tcxdr\OneDrive\Área de Trabalho\PROG\APP_TO_DO_LIST\APP_TO_DO_LIST\00_APP_TO_DO_LIST\APP_TO_DO_LIST\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\tcxdr\OneDrive\Área de Trabalho\PROG\APP_TO_DO_LIST\APP_TO_DO_LIST\00_APP_TO_DO_LIST\APP_TO_DO_LIST\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\tcxdr\OneDrive\Área de Trabalho\PROG\APP_TO_DO_LIST\APP_TO_DO_LIST\00_APP_TO_DO_LIST\APP_TO_DO_LIST\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\tcxdr\OneDrive\Área de Trabalho\PROG\APP_TO_DO_LIST\APP_TO_DO_LIST\00_APP_TO_DO_LIST\APP_TO_DO_LIST\bin\Debug\net8.0\MySqlConnector.dll
+C:\Users\tcxdr\OneDrive\Área de Trabalho\PROG\APP_TO_DO_LIST\APP_TO_DO_LIST\00_APP_TO_DO_LIST\APP_TO_DO_LIST\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\tcxdr\OneDrive\Área de Trabalho\PROG\APP_TO_DO_LIST\APP_TO_DO_LIST\00_APP_TO_DO_LIST\APP_TO_DO_LIST\obj\Debug\net8.0\APP_TO_DO_LIST.csproj.AssemblyReference.cache
+C:\Users\tcxdr\OneDrive\Área de Trabalho\PROG\APP_TO_DO_LIST\APP_TO_DO_LIST\00_APP_TO_DO_LIST\APP_TO_DO_LIST\obj\Debug\net8.0\APP_TO_DO_LIST.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\tcxdr\OneDrive\Área de Trabalho\PROG\APP_TO_DO_LIST\APP_TO_DO_LIST\00_APP_TO_DO_LIST\APP_TO_DO_LIST\obj\Debug\net8.0\APP_TO_D.E7BD9E5E.Up2Date

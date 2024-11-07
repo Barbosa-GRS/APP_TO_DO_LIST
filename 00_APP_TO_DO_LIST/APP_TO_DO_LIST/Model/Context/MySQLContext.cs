@@ -6,7 +6,7 @@ namespace APP_TO_DO_LIST.Model.Context
     {
         public MySQLContext() { }  // constructor to create instance of MySQLContext
 
-        public MySQLContext(DbContextOptions<MySQLContext> options) : base(options) { }  //
+        public MySQLContext(DbContextOptions<MySQLContext> options) : base (options) { }  
 
         public DbSet<ToDoList> ToDoLists { get; set; }  // represent a table in dataset and allows CRUD in class ToDoList
     }

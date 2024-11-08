@@ -29,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|c:\\users\\tcxdr\\onedrive\\\u00E1rea de trabalho\\prog\\app_to_do_list\\app_to_do_list\\00_app_to_do_list\\app_to_do_list\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|solutionrelative:app_to_do_list\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|c:\\users\\tcxdr\\onedrive\\\u00E1rea de trabalho\\prog\\app_to_do_list\\app_to_do_list\\00_app_to_do_list\\app_to_do_list\\model\\script\\script.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
-      "RelativeMoniker": "D:0:0:{2FCED314-5C0B-4798-95B2-F041AE561074}|APP_TO_DO_LIST\\APP_TO_DO_LIST.csproj|solutionrelative:app_to_do_list\\model\\script\\script.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,14 +43,13 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "script.sql ",
+              "Title": "script.sql",
               "DocumentMoniker": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\Model\\Script\\script.sql",
               "RelativeDocumentMoniker": "APP_TO_DO_LIST\\Model\\Script\\script.sql",
               "ToolTip": "C:\\Users\\tcxdr\\OneDrive\\\u00C1rea de Trabalho\\PROG\\APP_TO_DO_LIST\\APP_TO_DO_LIST\\00_APP_TO_DO_LIST\\APP_TO_DO_LIST\\Model\\Script\\script.sql",
               "RelativeToolTip": "APP_TO_DO_LIST\\Model\\Script\\script.sql",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-11-07T01:58:29.817Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T01:58:29.817Z"
             },
             {
               "$type": "Document",
@@ -79,8 +74,7 @@
               "RelativeToolTip": "APP_TO_DO_LIST\\Business\\Implementation\\ToDoListBusinessImplementation.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAEwBYAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T01:42:18.218Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T01:42:18.218Z"
             },
             {
               "$type": "Document",
@@ -92,8 +86,7 @@
               "RelativeToolTip": "APP_TO_DO_LIST\\Repository\\Implementation\\RepositoryImplementation.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAAlwBgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T01:42:18.225Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T01:42:18.225Z"
             },
             {
               "$type": "Document",
@@ -105,8 +98,7 @@
               "RelativeToolTip": "APP_TO_DO_LIST\\Model\\ToDoList.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T01:33:10.473Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T01:33:10.473Z"
             },
             {
               "$type": "Document",
@@ -118,8 +110,7 @@
               "RelativeToolTip": "APP_TO_DO_LIST\\Model\\Context\\MySQLContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwAoAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T01:31:00.029Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T01:31:00.029Z"
             },
             {
               "$type": "Document",
@@ -131,8 +122,7 @@
               "RelativeToolTip": "APP_TO_DO_LIST\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-06T17:13:09.475Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T17:13:09.475Z"
             }
           ]
         }

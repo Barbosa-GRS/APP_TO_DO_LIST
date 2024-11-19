@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace APP_TO_DO_LIST.Controllers
 {
-    [ApiVersion ("2")]
+    [ApiVersion ("1")]
     [ApiController]
     [Route("api/[controller]/v{version:apiVersion}")]
     public class ToDoListController : ControllerBase

@@ -2,7 +2,7 @@ using APP_TO_DO_LIST.Business;
 using APP_TO_DO_LIST.Business.Implementation;
 using APP_TO_DO_LIST.Model.Context;
 using APP_TO_DO_LIST.Repository;
-using APP_TO_DO_LIST.Repository.Implementation;
+using APP_TO_DO_LIST.Repository.Interface;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
@@ -29,7 +29,7 @@ builder.Services.AddApiVersioning();
 // add Dependency Injection
 
 builder.Services.AddScoped<IToDoListBusiness,ToDoListBusinessImplementation>();
-builder.Services.AddScoped<IRepository, RepositoryImplementation>();
+builder.Services.AddScoped<IRepository, BaseRepository>();
 
 
 var app = builder.Build();

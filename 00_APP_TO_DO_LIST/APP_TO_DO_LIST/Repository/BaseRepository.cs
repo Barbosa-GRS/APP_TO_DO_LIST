@@ -1,14 +1,15 @@
 ﻿using APP_TO_DO_LIST.Model;
 using APP_TO_DO_LIST.Model.Context;
+using APP_TO_DO_LIST.Repository.Interface;
 
-namespace APP_TO_DO_LIST.Repository.Implementation
+namespace APP_TO_DO_LIST.Repository
 {
-    public class RepositoryImplementation : IRepository
+    public class BaseRepository : IRepository
     {
 
         private MySQLContext _context;  // dataset call, 
 
-        public RepositoryImplementation(MySQLContext context) // constructor for injection of instance of MySQLContext ccc
+        public BaseRepository(MySQLContext context) // constructor for injection of instance of MySQLContext ccc
         {
             _context = context;
         }

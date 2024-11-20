@@ -17,25 +17,76 @@ namespace APP_TO_DO_LIST.Repository
         // responsible for find all tasks
         public List<ToDoList> FindAll()
         {
-            throw new NotImplementedException();
+            return _context.ToDoLists.ToList();
         }
 
         // responsible for create a new task
         public ToDoList Create(ToDoList toDoList)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _context.Add(toDoList);
+                _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return toDoList;
         }
 
         // responsible for update task
         public ToDoList Update(ToDoList toDoList)
         {
-            throw new NotImplementedException();
+            // check if exist task id, if it doesn't exist creat a new task
+            if (!Exist(toDoList.Id)) return new ToDoList();
+
+            //check which task has the same id and save it in result
+            var result = _context.ToDoLists.FirstOrDefault(p => p.Id.Equals(toDoList.Id));
+            if (result != null)
+            {
+                try
+                {
+                    _context.Entry(result).CurrentValues.SetValues(toDoList); // get result and put the currente values im toDoList
+                    _context.SaveChanges();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return toDoList;
         }
 
         // responsible for delete task
         public void Delete(long id)
         {
-            throw new NotImplementedException();
+            var result = _context.ToDoLists.FirstOrDefault(p => p.Id.Equals(id));
+            if (result != null)
+            {
+                try
+                {
+                    _context.ToDoLists.Remove(result);
+                    _context.SaveChanges();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+            }
         }
+
+        //Check if Id exist in data base
+        public bool Exist(long id)
+        {
+            //check if exist in _context any task wwith id equals request
+            return _context.ToDoLists.Any(e => e.Id.Equals(id));
+        }
+
+        
     }
 }

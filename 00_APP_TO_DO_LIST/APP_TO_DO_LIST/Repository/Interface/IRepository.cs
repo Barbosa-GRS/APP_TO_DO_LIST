@@ -1,6 +1,6 @@
 ﻿using APP_TO_DO_LIST.Model;
 
-namespace APP_TO_DO_LIST.Repository
+namespace APP_TO_DO_LIST.Repository.Interface
 {
     public interface IRepository
     {
@@ -8,6 +8,7 @@ namespace APP_TO_DO_LIST.Repository
         ToDoList Update(ToDoList toDoList);
         List<ToDoList> FindAll();
         void Delete(long id);
+        bool Exist (long id);
 
     }
 }

@@ -1,26 +1,33 @@
 ﻿using APP_TO_DO_LIST.Model;
+using APP_TO_DO_LIST.Repository.Interface;
 
 namespace APP_TO_DO_LIST.Business.Implementation
 {
     public class ToDoListBusinessImplementation : IToDoListBusiness
     {
+        private readonly IRepository _repository;  // dependenc injection 
+        public ToDoListBusinessImplementation(IRepository repository) // constructor
+        {
+            _repository = repository;
+        }
+
         public List<ToDoList> FindAll()
         {
-            throw new NotImplementedException();
+            return _repository.FindAll();
         }
         public ToDoList Create(ToDoList toDoList)
         {
-            throw new NotImplementedException();
+            return _repository.Create(toDoList);
         }
 
         public ToDoList Update(ToDoList toDoList)
         {
-            throw new NotImplementedException();
+           return _repository.Update(toDoList);
         }
 
         public void Delete(long id)
         {
-            throw new NotImplementedException();
+            _repository.Delete(id);
         }
     }
 }

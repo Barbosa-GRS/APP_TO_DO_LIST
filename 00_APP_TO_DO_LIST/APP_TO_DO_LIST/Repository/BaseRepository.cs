@@ -7,7 +7,7 @@ namespace APP_TO_DO_LIST.Repository
     public class BaseRepository : IRepository
     {
 
-        private MySQLContext _context;  // dataset call, 
+        private  MySQLContext _context;  // dataset call, 
 
         public BaseRepository(MySQLContext context) // constructor for injection of instance of MySQLContext ccc
         {

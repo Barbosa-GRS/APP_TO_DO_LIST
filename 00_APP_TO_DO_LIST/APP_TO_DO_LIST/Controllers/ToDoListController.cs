@@ -44,7 +44,14 @@ namespace APP_TO_DO_LIST.Controllers
         public IActionResult Delete(long id)
         {
             _business.Delete(id);
-            return BadRequest();
+            return NoContent();
+        }
+        
+        [HttpDelete]
+        public IActionResult DeleteCompleteToDoList()
+        {
+            _business.DeleteCompleteToDoList();
+            return NoContent();
         }
     }
 }

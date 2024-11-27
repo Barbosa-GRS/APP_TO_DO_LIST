@@ -11,7 +11,22 @@ namespace APP_TO_DO_LIST.Model.Context
        
         public DbSet<ToDoList> ToDoLists { get; set; }  // represent a table in dataset and allows CRUD in class ToDoList
 
-                
+        // Testing convert the int of enum for string in database
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Chama o método da classe base (DbContext)
+            base.OnModelCreating(modelBuilder);
+
+            // Aqui você pode adicionar configurações específicas do seu modelo
+            modelBuilder.Entity<ToDoList>()
+                .Property(t => t.Status)
+                .HasConversion(
+                    v => v.ToString(),   // Converte para string ao salvar
+                    v => (ToDoListStatus)Enum.Parse(typeof(ToDoListStatus), v)  // Converte de volta ao recuperar do banco
+                );
+        }
+
+
     }
 }
 

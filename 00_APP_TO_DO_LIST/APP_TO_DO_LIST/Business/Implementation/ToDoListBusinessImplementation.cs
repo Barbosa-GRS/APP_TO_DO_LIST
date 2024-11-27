@@ -1,5 +1,8 @@
 ﻿using APP_TO_DO_LIST.Model;
 using APP_TO_DO_LIST.Repository.Interface;
+using static APP_TO_DO_LIST.Model.ToDoList;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace APP_TO_DO_LIST.Business.Implementation
 {
@@ -28,6 +31,11 @@ namespace APP_TO_DO_LIST.Business.Implementation
         public void Delete(long id)
         {
             _repository.Delete(id);
+        }
+
+        public void DeleteCompleteToDoList( )
+        {
+           _repository.DeleteCompleteToDoList(); 
         }
     }
 }

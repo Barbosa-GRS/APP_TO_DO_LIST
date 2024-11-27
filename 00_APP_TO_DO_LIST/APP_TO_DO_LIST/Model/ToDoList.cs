@@ -2,7 +2,14 @@
 
 namespace APP_TO_DO_LIST.Model
 {
-    [Table ("to_do_list")]
+    public enum ToDoListStatus
+    {
+        Pending = 1,
+        InProcess = 2,
+        Completed = 3,
+    }
+
+    [Table("to_do_list")]
     public class ToDoList
     {
         [Column("id")]
@@ -15,8 +22,6 @@ namespace APP_TO_DO_LIST.Model
         public string Description { get; set; }
 
         [Column("status")]
-        public string Status { get; set; }
-
-
+        public ToDoListStatus Status { get; set; }
     }
 }

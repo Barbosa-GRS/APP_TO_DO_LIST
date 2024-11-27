@@ -1,13 +1,15 @@
 ﻿using APP_TO_DO_LIST.Model;
 using APP_TO_DO_LIST.Model.Context;
 using APP_TO_DO_LIST.Repository.Interface;
+using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
+
 
 namespace APP_TO_DO_LIST.Repository
 {
     public class BaseRepository : IRepository
     {
 
-        private  MySQLContext _context;  // dataset call, 
+        private MySQLContext _context;  // dataset call, 
 
         public BaseRepository(MySQLContext context) // constructor for injection of instance of MySQLContext ccc
         {
@@ -87,6 +89,31 @@ namespace APP_TO_DO_LIST.Repository
             return _context.ToDoLists.Any(e => e.Id.Equals(id));
         }
 
-        
+        public void DeleteCompleteToDoList()
+        {
+            var result = _context.ToDoLists
+                .Where(p => p.Status == ToDoListStatus.Completed)  // filter task completed
+                .ToList();  //  save to a list
+            if (result != null)
+            {
+                try
+                {
+                    foreach (var item in result)  // for each item in result run the code below
+                    {
+                        _context.ToDoLists.Remove(item);
+                    }
+                    _context.SaveChanges();
+
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+        }
+
+
+
+
     }
 }

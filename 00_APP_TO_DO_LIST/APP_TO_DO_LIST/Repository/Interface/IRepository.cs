@@ -9,6 +9,6 @@ namespace APP_TO_DO_LIST.Repository.Interface
         List<ToDoList> FindAll();
         void Delete(long id);
         bool Exist (long id);
-
+        void DeleteCompleteToDoList();
     }
 }

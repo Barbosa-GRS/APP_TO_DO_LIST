@@ -15,10 +15,11 @@ builder.Services.AddControllers();
 
 // Add connection with dataset
 
-var connection = builder.Configuration["MySQLConection:MySQLConectionString"];  // get string of connection
+
+var connection = builder.Configuration["MySQLConnection:MySQLConnectionString"]; // get string of connection
 builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(
     connection, 
-    new MySqlServerVersion(new Version (8,0,2))) //add o dbcontext
+    new MySqlServerVersion(new Version (8,0,2))) //add o dbcontext 
 );
 
 

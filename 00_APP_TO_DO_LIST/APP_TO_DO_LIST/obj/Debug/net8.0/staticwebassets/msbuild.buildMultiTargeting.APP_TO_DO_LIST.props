@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\APP_TO_DO_LIST.props" />
-</Project>

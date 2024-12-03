@@ -1,14 +1,14 @@
 ﻿using APP_TO_DO_LIST.Model;
 
-namespace APP_TO_DO_LIST.Repository.Interface
+namespace APP_TO_DO_LIST.Repository.Interface;
+
+public interface IRepository
 {
-    public interface IRepository
-    {
-        ToDoList Create(ToDoList toDoList);
-        ToDoList Update(ToDoList toDoList);
-        List<ToDoList> FindAll();
-        void Delete(long id);
-        bool Exist (long id);
-        void DeleteCompleteToDoList();
-    }
+    ToDoList Create(ToDoList toDoList);
+    ToDoList Update(ToDoList existingTask,ToDoList toDoList);
+    List<ToDoList> FindAll();
+    public ToDoList FindById(long id);
+    void Delete(long id);
+    bool Exist (long id);
+    void DeleteCompleteToDoList();
 }

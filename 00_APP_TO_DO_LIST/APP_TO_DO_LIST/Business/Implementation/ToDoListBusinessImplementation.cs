@@ -21,11 +21,17 @@ namespace APP_TO_DO_LIST.Business.Implementation
         public ToDoList Create(ToDoList toDoList)
         {
             return _repository.Create(toDoList);
+
         }
 
         public ToDoList Update(ToDoList toDoList)
         {
-           return _repository.Update(toDoList);
+            var existingTask = _repository.FindById(toDoList.Id);  // finds the existing task and saves it in the variable
+            if (existingTask == null) return new ToDoList(); 
+
+            var result = _repository.Update(existingTask, toDoList);
+
+           return result;
         }
 
         public void Delete(long id)

@@ -27,11 +27,11 @@ namespace APP_TO_DO_LIST.Business.Implementation
         public ToDoList Update(ToDoList toDoList)
         {
             var existingTask = _repository.FindById(toDoList.Id);  // finds the existing task and saves it in the variable
-            if (existingTask == null) return new ToDoList(); 
+            if (existingTask == null) return new ToDoList();
 
             var result = _repository.Update(existingTask, toDoList);
 
-           return result;
+            return result;
         }
 
         public void Delete(long id)
@@ -39,9 +39,14 @@ namespace APP_TO_DO_LIST.Business.Implementation
             _repository.Delete(id);
         }
 
-        public void DeleteCompleteToDoList( )
+        public void DeleteCompleteToDoList()
         {
-           _repository.DeleteCompleteToDoList(); 
+            var result = _repository.GetCompleteTask();
+            if (result != null)
+            {
+                 _repository.DeleteCompleteToDoList(result);
+            };
+            
         }
     }
 }

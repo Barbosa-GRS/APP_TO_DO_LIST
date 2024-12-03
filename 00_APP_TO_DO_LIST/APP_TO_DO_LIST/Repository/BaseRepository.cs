@@ -63,7 +63,7 @@ public class BaseRepository : IRepository
     // responsible for delete task
     public void Delete(long id)
     {
-        var result = _context.ToDoLists.FirstOrDefault(p => p.Id.Equals(id));
+        var result = FindById(id);
         if (result != null)
         {
             try
@@ -87,16 +87,12 @@ public class BaseRepository : IRepository
         return FindById(id) != null;
     }
 
-    public void DeleteCompleteToDoList()
-    {
-        var result = _context.ToDoLists
-            .Where(p => p.Status == ToDoListStatus.Completed)  // filter task completed
-            .ToList();  //  save to a list
-        if (result != null)
+    public void DeleteCompleteToDoList(List<ToDoList> completeTasks)
+    {        
         {
             try
             {
-                foreach (var item in result)  // for each item in result run the code below
+                foreach (var item in completeTasks)  // for each item in result run the code below
                 {
                     _context.ToDoLists.Remove(item);
                 }
@@ -110,7 +106,11 @@ public class BaseRepository : IRepository
         }
     }
 
+    public List<ToDoList> GetCompleteTask()
+    {
+        var result = _context.ToDoLists.Where(p => p.Status == ToDoListStatus.Completed).ToList();
+        return result;
+    }
 
-
-
+    
 }

@@ -5,10 +5,11 @@ namespace APP_TO_DO_LIST.Repository.Interface;
 public interface IRepository
 {
     ToDoList Create(ToDoList toDoList);
-    ToDoList Update(ToDoList existingTask,ToDoList toDoList);
+    ToDoList Update(ToDoList existingTask, ToDoList toDoList);
     List<ToDoList> FindAll();
     public ToDoList FindById(long id);
     void Delete(long id);
-    bool Exist (long id);
-    void DeleteCompleteToDoList();
+    bool Exist(long id);
+    void DeleteCompleteToDoList(List<ToDoList> completeTasks);
+    List<ToDoList> GetCompleteTask();
 }

@@ -24,6 +24,11 @@ public class ToDoListBusinessImplementation : IToDoListBusiness
         {
             throw new Exception("The user cannot create a task with completed status");
         }
+        else if (string.IsNullOrEmpty(toDoList.Name))  // check with Lucas if this is usual
+        {
+            throw new Exception("The name of the task should not be empty"); // how to make this appear in postman
+        }
+                
         return _repository.Create(toDoList);
 
     }

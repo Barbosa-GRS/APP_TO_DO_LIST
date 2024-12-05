@@ -8,6 +8,7 @@ public interface IToDoListBusiness
     ToDoList Create(ToDoList toDoList);
     ToDoList Update(ToDoList toDoList);
     List<ToDoList> FindAll();
+    public ToDoList FindById(long id);
     void Delete(long id);
     void DeleteCompleteToDoList();
 

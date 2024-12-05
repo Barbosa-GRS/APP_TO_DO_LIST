@@ -26,6 +26,13 @@ public class ToDoListController : ControllerBase
         return Ok(_business.FindAll());
     }
 
+    [HttpGet("{id}")]
+    public IActionResult GetById([FromRoute] long id) 
+    {
+        return Ok(_business.FindById(id));
+    }
+
+
     [HttpPost]
     public IActionResult Post([FromBody] ToDoList toDoList)  // for create
     {

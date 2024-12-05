@@ -18,6 +18,11 @@ public class ToDoListBusinessImplementation : IToDoListBusiness
     {
         return _repository.FindAll();
     }
+
+    public ToDoList FindById(long id)
+    {
+       return _repository.FindById(id);
+    }
     public ToDoList Create(ToDoList toDoList)
     {
         if (toDoList.Status == Enums.ToDoListStatus.Completed)
@@ -43,6 +48,11 @@ public class ToDoListBusinessImplementation : IToDoListBusiness
 
         var result = _repository.Update(existingTask, toDoList);
 
+        if (string.IsNullOrEmpty(result.Name)) 
+        {
+            throw new Exception("The name of the task should not be empty");
+        }
+
         return result;
     }
 
@@ -60,4 +70,6 @@ public class ToDoListBusinessImplementation : IToDoListBusiness
         };
         
     }
+
+   
 }

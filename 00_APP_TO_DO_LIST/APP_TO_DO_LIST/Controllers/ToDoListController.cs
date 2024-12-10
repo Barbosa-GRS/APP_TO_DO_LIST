@@ -59,8 +59,8 @@ public class ToDoListController : ControllerBase
         _business.Delete(id);
         return NoContent();
     }
-    
-    [HttpDelete]
+
+    [HttpDelete("completed-tasks")]
     public IActionResult DeleteCompleteToDoList()
     {
         _business.DeleteCompleteToDoList();

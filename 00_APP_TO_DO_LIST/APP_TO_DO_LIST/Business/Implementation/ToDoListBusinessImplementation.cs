@@ -1,8 +1,5 @@
 ﻿using APP_TO_DO_LIST.Model;
 using APP_TO_DO_LIST.Repository.Interface;
-using static APP_TO_DO_LIST.Model.ToDoList;
-using System.Linq;
-using System.Collections.Generic;
 
 namespace APP_TO_DO_LIST.Business.Implementation;
 
@@ -21,8 +18,9 @@ public class ToDoListBusinessImplementation : IToDoListBusiness
 
     public ToDoList FindById(long id)
     {
-       return _repository.FindById(id);
+        return _repository.FindById(id);
     }
+
     public ToDoList Create(ToDoList toDoList)
     {
         if (toDoList.Status == Enums.ToDoListStatus.Completed)
@@ -33,43 +31,65 @@ public class ToDoListBusinessImplementation : IToDoListBusiness
         {
             throw new Exception("The name of the task should not be empty"); // how to make this appear in postman
         }
-                
+
         return _repository.Create(toDoList);
 
     }
 
+
+    // antigo valor/ esse esta no banco / existingTask
+    //    {
+    //      "id" : "1",
+    //      "name": "lavar banheiro",
+    //      "description": "lavar banheiro",
+    //      "status": "Pending"
+    //  }
+
+    // novo valor/ esse voce enviou para ser atualizado / toDoList
+    //    {
+    //      "id" : "1",
+    //      "name": "lavar banheiro",
+    //      "description": "lavar banheiro",
+    //      "status": "InProcess"
+    //  }
     public ToDoList Update(ToDoList toDoList)
     {
-        var existingTask = _repository.FindById(toDoList.Id);  // finds the existing task and saves it in the variable
+        //passou 1 no toDoList.Id para buscar se existe alguma tarefa com esse ID
+        //retornou o antigo valor agora o antigo valor esta no existingTask
+        ToDoList existingTask = _repository.FindById(toDoList.Id);  // finds the existing task and saves it in the variable
         if (existingTask == null)
         {
-            return new ToDoList();
+            throw new Exception("Task " + toDoList.Name + " does not exist in database");
         }
 
-        var result = _repository.Update(existingTask, toDoList);
-
-        if (string.IsNullOrEmpty(result.Name)) 
+        if (string.IsNullOrEmpty(toDoList.Name))
         {
-            throw new Exception("The name of the task should not be empty");
+            throw new Exception("The name of the task cannot be empty");
         }
+
+        ToDoList result = _repository.Update(existingTask, toDoList);
 
         return result;
     }
 
     public void Delete(long id)
     {
-        _repository.Delete(id);
+        ToDoList result = FindById(id);
+        if (result != null)
+        {
+            _repository.Delete(result);
+        }
     }
 
     public void DeleteCompleteToDoList()
     {
-        var result = _repository.GetCompleteTask();
-        if (result != null)
+        List<ToDoList> listOfTasks = _repository.GetCompleteTask();
+        if (listOfTasks != null)
         {
-             _repository.DeleteCompleteToDoList(result);
+            foreach (ToDoList item in listOfTasks)  // for each item in result run the code below
+            {
+                _repository.Delete(item);
+            }
         };
-        
     }
-
-   
 }

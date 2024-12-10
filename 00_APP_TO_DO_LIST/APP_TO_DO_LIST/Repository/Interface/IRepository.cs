@@ -8,8 +8,7 @@ public interface IRepository
     ToDoList Update(ToDoList existingTask, ToDoList toDoList);
     List<ToDoList> FindAll();
     public ToDoList FindById(long id);
-    void Delete(long id);
+    void Delete(ToDoList item);
     bool Exist(long id);
-    void DeleteCompleteToDoList(List<ToDoList> completeTasks);
     List<ToDoList> GetCompleteTask();
 }

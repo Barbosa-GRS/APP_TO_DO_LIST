@@ -3,38 +3,44 @@ using APP_TO_DO_LIST.Model;
 using APP_TO_DO_LIST.Repository.Interface;
 using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using APP_TO_DO_LIST.Enums;
+using APP_TO_DO_LIST.Model.Base;
+using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 
 namespace APP_TO_DO_LIST.Repository;
 
-public class BaseRepository : IRepository
+public class BaseRepository <T>: IRepository <T> where T : BaseEntity
 {
 
     private MySQLContext _context;  // dataset call, 
 
+    private DbSet<T> _dataSet; 
+
     public BaseRepository(MySQLContext context) // constructor for injection of instance of MySQLContext ccc
     {
         _context = context;
+        _dataSet = _context.Set<T>(); // pega o tipo do repositório, automatiza o processo
     }
 
     // responsible for find all tasks
-    public List<ToDoList> FindAll()
+    public List<T> FindAll()
     {
-        return _context.ToDoLists.ToList();
+        return _dataSet.ToList();
     }
 
     // responsible for find expecific tasks
-    public ToDoList FindById(long id)
+    public T FindById(long id)
     {
-        return _context.ToDoLists.FirstOrDefault(e => e.Id.Equals(id));
+        return _dataSet.FirstOrDefault(e => e.Id.Equals(id));
     }
 
     // responsible for create a new task
-    public ToDoList Create(ToDoList toDoList)
+    public T Create(T item)
     {
         try
         {
-            _context.Add(toDoList);
+            _dataSet.Add(item);
             _context.SaveChanges();
         }
         catch (Exception)
@@ -42,15 +48,15 @@ public class BaseRepository : IRepository
 
             throw;
         }
-        return toDoList;
+        return item;
     }
 
     // responsible for update task
-    public ToDoList Update(ToDoList existingTask, ToDoList toDoList)
+    public T Update(T existingTask, T item) // i don't know how existingTask should be
     {
         try
         {
-            _context.Entry(existingTask).CurrentValues.SetValues(toDoList); // get result and put the currente values im toDoList
+            _dataSet.Entry(existingTask).CurrentValues.SetValues(item); // get result and put the currente values im toDoList
             _context.SaveChanges();
         }
         catch (Exception)
@@ -58,15 +64,15 @@ public class BaseRepository : IRepository
             throw;
         }
 
-        return toDoList;
+        return item;
     }
 
     // responsible for delete task
-    public void Delete(ToDoList item)
+    public void Delete(T item)
     {
         try
         {
-            _context.ToDoLists.Remove(item);
+            _dataSet.Remove(item);
             _context.SaveChanges();
         }
         catch (Exception)
@@ -83,7 +89,7 @@ public class BaseRepository : IRepository
         return FindById(id) != null;
     }
 
-    public List<ToDoList> GetCompleteTask()
+    public List<ToDoList> GetCompleteTask()  // maybe this can't stay here
     {
         var result = _context.ToDoLists.Where(p => p.Status == ToDoListStatus.Completed).ToList();
         return result;

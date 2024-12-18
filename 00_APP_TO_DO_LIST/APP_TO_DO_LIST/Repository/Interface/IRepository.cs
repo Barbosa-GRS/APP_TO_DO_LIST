@@ -1,14 +1,15 @@
 ﻿using APP_TO_DO_LIST.Model;
+using APP_TO_DO_LIST.Model.Base;
 
 namespace APP_TO_DO_LIST.Repository.Interface;
 
-public interface IRepository
+public interface IRepository <T> where T : BaseEntity
 {
-    ToDoList Create(ToDoList toDoList);
-    ToDoList Update(ToDoList existingTask, ToDoList toDoList);
-    List<ToDoList> FindAll();
-    public ToDoList FindById(long id);
-    void Delete(ToDoList item);
+    T Create(T item);
+    T Update(T existingTask, T item);
+    List<T> FindAll();
+    public T FindById(long id);
+    void Delete(T item);
     bool Exist(long id);
     List<ToDoList> GetCompleteTask();
 }

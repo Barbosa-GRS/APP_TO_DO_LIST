@@ -5,8 +5,8 @@ namespace APP_TO_DO_LIST.Business.Implementation;
 
 public class ToDoListBusinessImplementation : IToDoListBusiness
 {
-    private readonly IRepository _repository;  // dependenc injection 
-    public ToDoListBusinessImplementation(IRepository repository) // constructor
+    private readonly IRepository<ToDoList> _repository;  // dependenc injection 
+    public ToDoListBusinessImplementation(IRepository<ToDoList> repository) // constructor
     {
         _repository = repository;
     }

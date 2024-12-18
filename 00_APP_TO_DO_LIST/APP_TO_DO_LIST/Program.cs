@@ -30,7 +30,8 @@ builder.Services.AddApiVersioning();
 // add Dependency Injection
 
 builder.Services.AddScoped<IToDoListBusiness,ToDoListBusinessImplementation>();
-builder.Services.AddScoped<IRepository, BaseRepository>();
+
+builder.Services.AddScoped(typeof(IRepository<>),typeof(BaseRepository<>));
 
 
 var app = builder.Build();

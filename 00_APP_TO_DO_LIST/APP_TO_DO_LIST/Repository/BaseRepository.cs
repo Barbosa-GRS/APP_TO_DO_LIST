@@ -13,14 +13,14 @@ namespace APP_TO_DO_LIST.Repository;
 public class BaseRepository <T>: IRepository <T> where T : BaseEntity
 {
 
-    private MySQLContext _context;  // dataset call, 
+    protected MySQLContext _context;  // dataset call, 
 
     private DbSet<T> _dataSet; 
 
     public BaseRepository(MySQLContext context) // constructor for injection of instance of MySQLContext ccc
     {
         _context = context;
-        _dataSet = _context.Set<T>(); // pega o tipo do repositório, automatiza o processo
+        _dataSet = _context.Set<T>(); // pega o tipo do repositório, automatiza o processo (duvida aqui)
     }
 
     // responsible for find all tasks
@@ -52,11 +52,11 @@ public class BaseRepository <T>: IRepository <T> where T : BaseEntity
     }
 
     // responsible for update task
-    public T Update(T existingTask, T item) // i don't know how existingTask should be
+    public T Update(T oldItem, T item) // i don't know how existingTask should be
     {
         try
         {
-            _dataSet.Entry(existingTask).CurrentValues.SetValues(item); // get result and put the currente values im toDoList
+            _dataSet.Entry(oldItem).CurrentValues.SetValues(item); // get result and put the currente values im toDoList
             _context.SaveChanges();
         }
         catch (Exception)
@@ -89,9 +89,5 @@ public class BaseRepository <T>: IRepository <T> where T : BaseEntity
         return FindById(id) != null;
     }
 
-    public List<ToDoList> GetCompleteTask()  // maybe this can't stay here
-    {
-        var result = _context.ToDoLists.Where(p => p.Status == ToDoListStatus.Completed).ToList();
-        return result;
-    }
+    
 }

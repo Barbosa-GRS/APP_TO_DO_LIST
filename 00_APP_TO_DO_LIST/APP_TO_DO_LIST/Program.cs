@@ -31,7 +31,8 @@ builder.Services.AddApiVersioning();
 
 builder.Services.AddScoped<IToDoListBusiness,ToDoListBusinessImplementation>();
 
-builder.Services.AddScoped(typeof(IRepository<>),typeof(BaseRepository<>));
+builder.Services.AddScoped(typeof(IRepository<>),typeof(BaseRepository<>)); // use typeof for generic form
+builder.Services.AddScoped(typeof(ITaskRepository),typeof(TaskRepository)); // use typeof for generic form
 
 
 var app = builder.Build();

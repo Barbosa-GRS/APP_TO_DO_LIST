@@ -5,12 +5,11 @@ namespace APP_TO_DO_LIST.Business.Implementation;
 
 public class ToDoListBusinessImplementation : IToDoListBusiness
 {
-    private readonly IRepository<ToDoList> _repository;  // dependenc injection 
-    public ToDoListBusinessImplementation(IRepository<ToDoList> repository) // constructor
+    private readonly ITaskRepository _repository; 
+    public ToDoListBusinessImplementation(ITaskRepository repository) // constructor
     {
         _repository = repository;
     }
-
     public List<ToDoList> FindAll()
     {
         return _repository.FindAll();

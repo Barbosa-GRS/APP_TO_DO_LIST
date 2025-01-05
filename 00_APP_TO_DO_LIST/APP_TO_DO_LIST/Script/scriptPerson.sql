@@ -1,0 +1,7 @@
+CREATE TABLE `person` (
+	`id` BIGINT(19) NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(50) NOT NULL,
+	`address` VARCHAR(100) NOT NULL ,
+	`age` TINYINT(3) NOT NULL,
+	PRIMARY KEY (`id`)
+);

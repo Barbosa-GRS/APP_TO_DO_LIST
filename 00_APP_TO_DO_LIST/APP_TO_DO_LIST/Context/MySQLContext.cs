@@ -12,6 +12,7 @@ public class MySQLContext : DbContext  //interacts with the database
 
 
     public DbSet<ToDoList> ToDoLists { get; set; }  // represent a table in dataset and allows CRUD in class ToDoList
+    public DbSet<Person> Persons { get; set; }
 
     // Testing convert the int of enum for string in database
     protected override void OnModelCreating(ModelBuilder modelBuilder)

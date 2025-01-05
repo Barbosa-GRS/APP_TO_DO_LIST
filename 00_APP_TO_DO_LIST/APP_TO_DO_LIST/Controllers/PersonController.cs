@@ -20,7 +20,6 @@ public class PersonController : ControllerBase
         _personBusiness = personBusiness;
     }
 
-
     [HttpGet]
 
     public IActionResult Get()
@@ -46,7 +45,7 @@ public class PersonController : ControllerBase
     }
 
     [HttpPut]
-    public IActionResult Put([FromBody] Person person) 
+    public IActionResult Put([FromBody] Person person)
     {
         if (person == null)
         {

@@ -21,12 +21,20 @@ public class ToDoListController : ControllerBase
     }
 
     [HttpGet]
+    [ProducesResponseType((200), Type = typeof(List<ToDoList>))] //OK
+    [ProducesResponseType(204)] //No Content
+    [ProducesResponseType(400)] //Bad Request
+    [ProducesResponseType(401)] //Unauthorized
     public IActionResult Get()  // for read
     {
         return Ok(_business.FindAll());
     }
 
     [HttpGet("{id}")]
+    [ProducesResponseType((200), Type = typeof(ToDoList))]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(401)]
     public IActionResult GetById([FromRoute] long id) 
     {
         return Ok(_business.FindById(id));
@@ -34,6 +42,10 @@ public class ToDoListController : ControllerBase
 
 
     [HttpPost]
+    [ProducesResponseType((200), Type = typeof(ToDoList))]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(401)]
     public IActionResult Post([FromBody] ToDoList toDoList)  // for create
     {
         if (toDoList == null)
@@ -44,6 +56,10 @@ public class ToDoListController : ControllerBase
     }
 
     [HttpPut]
+    [ProducesResponseType((200), Type = typeof(ToDoList))]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(401)]
     public IActionResult Put([FromBody] ToDoList todolist) // for update
     {
         if (todolist == null)
@@ -54,6 +70,9 @@ public class ToDoListController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(401)]
     public IActionResult Delete([FromRoute] long id)
     {
         _business.Delete(id);
@@ -61,6 +80,9 @@ public class ToDoListController : ControllerBase
     }
 
     [HttpDelete("completed-tasks")]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(401)]
     public IActionResult DeleteCompleteToDoList()
     {
         _business.DeleteCompleteToDoList();

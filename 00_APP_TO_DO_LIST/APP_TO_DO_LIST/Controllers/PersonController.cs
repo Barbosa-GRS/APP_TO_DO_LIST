@@ -11,16 +11,18 @@ namespace APP_TO_DO_LIST.Controllers;
 
 public class PersonController : ControllerBase
 {
-    private readonly ILogger<PersonController> _logger;
     private readonly IPersonBusiness _personBusiness;
 
-    public PersonController(ILogger<PersonController> logger, IPersonBusiness personBusiness)
+    public PersonController(IPersonBusiness personBusiness)
     {
-        _logger = logger;
         _personBusiness = personBusiness;
     }
 
     [HttpGet]
+    [ProducesResponseType((200), Type = typeof(List<Person>))] //OK
+    [ProducesResponseType(204)] //No Content
+    [ProducesResponseType(400)] //Bad Request
+    [ProducesResponseType(401)] //Unauthorized
 
     public IActionResult Get()
     {
@@ -28,12 +30,19 @@ public class PersonController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [ProducesResponseType((200), Type = typeof(Person))]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(401)]
     public IActionResult GetById([FromRoute] int id)
     {
         return Ok(_personBusiness.FindById(id));
     }
 
     [HttpPost]
+    [ProducesResponseType((200), Type = typeof(Person))]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(401)]
     public IActionResult Post([FromBody] Person person)
     {
         if (person == null)
@@ -45,6 +54,9 @@ public class PersonController : ControllerBase
     }
 
     [HttpPut]
+    [ProducesResponseType((200), Type = typeof(Person))]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(401)]
     public IActionResult Put([FromBody] Person person)
     {
         if (person == null)
@@ -58,6 +70,9 @@ public class PersonController : ControllerBase
 
 
     [HttpDelete("{id}")]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(401)]
     public IActionResult Delete([FromRoute] int id)
     {
         _personBusiness.Delete(id);

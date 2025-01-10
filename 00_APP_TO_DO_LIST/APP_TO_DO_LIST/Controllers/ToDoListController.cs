@@ -1,42 +1,91 @@
+using APP_TO_DO_LIST.Business;
+using APP_TO_DO_LIST.Model;
 using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 
-namespace APP_TO_DO_LIST.Controllers
+namespace APP_TO_DO_LIST.Controllers;
+
+[ApiVersion("1")]
+[ApiController]
+[Route("api/[controller]/v{version:apiVersion}")]
+public class ToDoListController : ControllerBase
 {
-    [ApiVersion ("1")]
-    [ApiController]
-    [Route("api/[controller]/v{version:apiVersion}")]
-    public class ToDoListController : ControllerBase
+
+    private readonly ILogger<ToDoListController> _logger;
+    private readonly IToDoListBusiness _business;
+
+    public ToDoListController(ILogger<ToDoListController> logger, IToDoListBusiness business)
     {
-        
-        private readonly ILogger<ToDoListController> _logger;
+        _logger = logger;
+        _business = business;
+    }
 
-        public ToDoListController(ILogger<ToDoListController> logger)
-        {
-            _logger = logger;
-        }
+    [HttpGet]
+    [ProducesResponseType((200), Type = typeof(List<ToDoList>))] //OK
+    [ProducesResponseType(204)] //No Content
+    [ProducesResponseType(400)] //Bad Request
+    [ProducesResponseType(401)] //Unauthorized
+    public IActionResult Get()  // for read
+    {
+        return Ok(_business.FindAll());
+    }
 
-        [HttpGet]
-        public IActionResult Get()  // for read
-        {
-            return null;
-        }
+    [HttpGet("{id}")]
+    [ProducesResponseType((200), Type = typeof(ToDoList))]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(401)]
+    public IActionResult GetById([FromRoute] long id) 
+    {
+        return Ok(_business.FindById(id));
+    }
 
-        [HttpPost]
-        public IActionResult Post()  // for create
-        {
-            return null;
-        }
 
-        [HttpPut]
-        public IActionResult Put() // for update
+    [HttpPost]
+    [ProducesResponseType((200), Type = typeof(ToDoList))]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(401)]
+    public IActionResult Post([FromBody] ToDoList toDoList)  // for create
+    {
+        if (toDoList == null)
         {
-            return null;
+            return BadRequest();
         }
+        return Ok(_business.Create(toDoList));
+    }
 
-        [HttpDelete] IActionResult Delete()
+    [HttpPut]
+    [ProducesResponseType((200), Type = typeof(ToDoList))]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(401)]
+    public IActionResult Put([FromBody] ToDoList todolist) // for update
+    {
+        if (todolist == null)
         {
-            return null;
+            return BadRequest();
         }
+        return Ok(_business.Update(todolist)); ;
+    }
+
+    [HttpDelete("{id}")]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(401)]
+    public IActionResult Delete([FromRoute] long id)
+    {
+        _business.Delete(id);
+        return NoContent();
+    }
+
+    [HttpDelete("completed-tasks")]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(401)]
+    public IActionResult DeleteCompleteToDoList()
+    {
+        _business.DeleteCompleteToDoList();
+        return NoContent();
     }
 }

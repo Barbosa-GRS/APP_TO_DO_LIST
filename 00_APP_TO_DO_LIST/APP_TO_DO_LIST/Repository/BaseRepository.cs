@@ -81,13 +81,5 @@ public class BaseRepository <T>: IRepository <T> where T : BaseEntity
             throw;
         }
     }
-
-    //Check if Id exist in data base
-    public bool Exist(long id)
-    {
-        //check if exist in _context any task wwith id equals request
-        return FindById(id) != null;
-    }
-
-    
+      
 }

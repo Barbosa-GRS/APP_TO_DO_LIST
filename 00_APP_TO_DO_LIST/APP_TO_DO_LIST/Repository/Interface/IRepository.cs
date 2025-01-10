@@ -10,6 +10,5 @@ public interface IRepository <T> where T : BaseEntity
     List<T> FindAll();
     public T FindById(long id);
     void Delete(T item);
-    bool Exist(long id);
-    //List<ToDoList> GetCompleteTask();
+   
 }

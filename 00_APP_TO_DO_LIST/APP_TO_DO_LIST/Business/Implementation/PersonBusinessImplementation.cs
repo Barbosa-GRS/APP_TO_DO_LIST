@@ -23,11 +23,13 @@ public class PersonBusinessImplementation : IPersonBusiness
 
     public Person Create(Person person)
     {
-        
+        if (string.IsNullOrEmpty(person.Name ))
+        {
+            throw new Exception("The name of the person should not be empty");
+        }
         return _repository.Create(person);
 
     }
-
 
    
     public Person Update(Person person)

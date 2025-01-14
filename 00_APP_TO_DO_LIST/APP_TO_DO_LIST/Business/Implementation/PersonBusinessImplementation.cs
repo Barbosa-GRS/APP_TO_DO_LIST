@@ -6,8 +6,8 @@ namespace APP_TO_DO_LIST.Business.Implementation;
 
 public class PersonBusinessImplementation : IPersonBusiness
 {
-    private readonly IRepository<Person> _repository; // declaração de um campo privado, so pode ser auterado no construtor
-    public PersonBusinessImplementation(IRepository<Person> repository) // constructor
+    private readonly IPersonRepository _repository; // declaração de um campo privado, so pode ser auterado no construtor
+    public PersonBusinessImplementation(IPersonRepository repository) // constructor
     {
         _repository = repository;
     }

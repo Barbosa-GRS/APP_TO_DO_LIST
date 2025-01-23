@@ -23,15 +23,30 @@ public class PersonBusinessImplementation : IPersonBusiness
 
     public Person Create(Person person)
     {
-        if (string.IsNullOrEmpty(person.Name ))
+        if (string.IsNullOrEmpty(person.Name))
         {
-            throw new Exception("The name of the person should not be empty");
+            throw new ArgumentException("The name of the person should not be empty", nameof(person.Name));
         }
+        else if (person.Name.Length < 10)
+        {
+            throw new ArgumentException("The name should have more 10 characters", nameof(person.Name));
+        }
+
+        if (person.Age < 18)
+        {
+            throw new ArgumentOutOfRangeException(nameof(person.Age), ("Age cannot be less than 18 years"));
+        };
         return _repository.Create(person);
+
+        if (person.Street || person.Number || person.ZipCode || person.City || person.State == null) // não finalizado
+        {
+            throw new Exception("Complete the address");
+        }
+
 
     }
 
-   
+
     public Person Update(Person person)
     {
         //passou 1 no Person.Id para buscar se existe alguma tarefa com esse ID

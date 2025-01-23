@@ -63,6 +63,7 @@ builder.Services.AddScoped<IPersonBusiness,PersonBusinessImplementation>();
 
 builder.Services.AddScoped(typeof(IRepository<>),typeof(BaseRepository<>)); // use typeof for generic form
 builder.Services.AddScoped(typeof(ITaskRepository),typeof(TaskRepository)); // use typeof for generic form
+builder.Services.AddScoped(typeof(IPersonRepository),typeof(PersonRepository)); // use typeof for generic form
 
 
 var app = builder.Build();

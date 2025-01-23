@@ -18,4 +18,10 @@ public class ToDoList : BaseEntity
 
     [Column("status")]
     public ToDoListStatus Status { get; set; }
+
+    [Column("person_id")]
+    public long Person_id { get; set; } 
+
+    [Column("person")]
+    public Person ? Person { get; set; }
 }

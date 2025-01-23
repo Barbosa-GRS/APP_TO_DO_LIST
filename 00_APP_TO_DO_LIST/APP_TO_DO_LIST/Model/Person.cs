@@ -5,11 +5,29 @@ namespace APP_TO_DO_LIST.Model;
 [Table("person")]
 public class Person : BaseEntity
 {
+    
     [Column("name")]
     public string Name { get; set; }
-    [Column("address")]
-    public string Address { get; set; }
+
+    [Column("street")]
+    public string Street { get; set; }
+
+    [Column("number")]
+    public int Number { get; set; }
+
+    [Column("zip_code")]
+    public int ZipCode { get; set; }
+
+    [Column("city")]
+    public string City { get; set; }
+
+    [Column("state")]
+    public string State { get; set; }
+
     [Column("age")]
     public int Age { get; set; }
+
+    [Column("toDoLists")]
+    public List<ToDoList> ? ToDoLists { get; set; }
 
 }

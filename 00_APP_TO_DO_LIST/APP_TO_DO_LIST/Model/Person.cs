@@ -13,10 +13,10 @@ public class Person : BaseEntity
     public string Street { get; set; }
 
     [Column("number")]
-    public int Number { get; set; }
+    public string Number { get; set; }
 
     [Column("zip_code")]
-    public int ZipCode { get; set; }
+    public string ZipCode { get; set; }
 
     [Column("city")]
     public string City { get; set; }
@@ -28,6 +28,6 @@ public class Person : BaseEntity
     public int Age { get; set; }
 
     [Column("toDoLists")]
-    public List<ToDoList> ? ToDoLists { get; set; }
+    public List<ToDoList>  ToDoLists { get; set; }
 
 }

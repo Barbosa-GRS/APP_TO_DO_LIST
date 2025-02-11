@@ -6,6 +6,6 @@ namespace APP_TO_DO_LIST.Model.Base
     {
         // for generic repository to use id 
         [Column("id")]
-        public long Id { get; set; }
+        public int Id { get; set; }
     }
 }

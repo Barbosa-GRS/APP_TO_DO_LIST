@@ -8,7 +8,7 @@ public interface IRepository <T> where T : BaseEntity
     T Create(T item);
     T Update(T oldItem, T item);
     List<T> FindAll();
-    public T FindById(long id);
+    public T FindById(int id);
     void Delete(T item);
    
 }

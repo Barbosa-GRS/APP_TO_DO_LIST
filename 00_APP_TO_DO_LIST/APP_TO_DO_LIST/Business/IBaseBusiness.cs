@@ -8,6 +8,6 @@ public interface IBaseBusiness<T>
     T Create(T item);
     T Update(T item);
     List<T> FindAll();
-    public T FindById(long id);
-    void Delete(long id);
+    public T FindById(int id);
+    void Delete(int id);
 }

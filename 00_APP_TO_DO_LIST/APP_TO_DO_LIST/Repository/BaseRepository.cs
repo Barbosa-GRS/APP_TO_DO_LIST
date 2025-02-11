@@ -30,7 +30,7 @@ public class BaseRepository <T>: IRepository <T> where T : BaseEntity
     }
 
     // responsible for find expecific tasks
-    public T FindById(long id)
+    public T FindById(int id)
     {
         return _dataSet.FirstOrDefault(e => e.Id.Equals(id));
     }

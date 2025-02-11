@@ -18,13 +18,12 @@ public class MySQLContext : DbContext  //interacts with the database
     {
         // Configuração da relação entre ToDoList e Person
         modelBuilder.Entity<ToDoList>()
-            .HasOne(t => t.Person)
-            .WithMany(p => p.ToDoLists)
-            .HasForeignKey(t => t.Person_id);
-    
+        .HasOne(t => t.Person)            // Relacionamento 1:N
+        .WithMany(p => p.ToDoLists)       // Uma pessoa tem várias ToDoLists
+        .HasForeignKey(t => t.PersonId);  // PersonId é a chave estrangeira
 
-    // Testing convert the int of enum for string in database
-    
+        // Testing convert the int of enum for string in database
+
         // Chama o método da classe base (DbContext)
         base.OnModelCreating(modelBuilder);
 
@@ -36,7 +35,5 @@ public class MySQLContext : DbContext  //interacts with the database
                 v => (ToDoListStatus)Enum.Parse(typeof(ToDoListStatus), v)  // Converte de volta ao recuperar do banco
             );
     }
-
-
 }
 

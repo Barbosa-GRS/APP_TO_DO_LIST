@@ -16,7 +16,7 @@ public class PersonBusinessImplementation : IPersonBusiness
         return _repository.FindAll();
     }
 
-    public Person FindById(long id)
+    public Person FindById(int id)
     {
         return _repository.FindById(id);
     }
@@ -36,14 +36,25 @@ public class PersonBusinessImplementation : IPersonBusiness
         {
             throw new ArgumentOutOfRangeException(nameof(person.Age), ("Age cannot be less than 18 years"));
         };
-        return _repository.Create(person);
-
-        if (person.Street || person.Number || person.ZipCode || person.City || person.State == null) // não finalizado
+  
+        if ((!string.IsNullOrEmpty(person.Street)
+            && !string.IsNullOrEmpty(person.Number)
+            && !string.IsNullOrEmpty(person.ZipCode)
+            && !string.IsNullOrEmpty(person.City)
+            && !string.IsNullOrEmpty(person.State))
+            ||
+            ((string.IsNullOrEmpty(person.Street)
+            && string.IsNullOrEmpty(person.Number)
+            && string.IsNullOrEmpty(person.ZipCode)
+            && string.IsNullOrEmpty(person.City)
+            && string.IsNullOrEmpty(person.State))))// não finalizado
+        {
+            return _repository.Create(person);
+        }
+        else
         {
             throw new Exception("Complete the address");
-        }
-
-
+        }        
     }
 
 
@@ -51,15 +62,15 @@ public class PersonBusinessImplementation : IPersonBusiness
     {
         //passou 1 no Person.Id para buscar se existe alguma tarefa com esse ID
         //retornou o antigo valor agora o antigo valor esta no existingTask
-        Person existingPerson = _repository.FindById(person.Id);  // finds the existing task and saves it in the variable
+        Person existingPerson = _repository.FindById(person.Id);  // finds the existing person and saves it in the variable
         if (existingPerson == null)
         {
-            throw new Exception("Task " + person.Name + " does not exist in database");
+            throw new Exception("Person " + person.Name + " does not exist in database");
         }
 
         if (string.IsNullOrEmpty(person.Name))
         {
-            throw new Exception("The name of the task cannot be empty");
+            throw new Exception("The name of the person cannot be empty");
         }
 
         Person result = _repository.Update(existingPerson, person);
@@ -67,7 +78,7 @@ public class PersonBusinessImplementation : IPersonBusiness
         return result;
     }
 
-    public void Delete(long id)
+    public void Delete(int id)
     {
         Person result = FindById(id);
         if (result != null)

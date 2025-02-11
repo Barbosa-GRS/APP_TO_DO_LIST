@@ -1,5 +1,6 @@
 ﻿using APP_TO_DO_LIST.Model;
 using APP_TO_DO_LIST.Repository.Interface;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace APP_TO_DO_LIST.Business.Implementation;
 
@@ -15,13 +16,16 @@ public class ToDoListBusinessImplementation : IToDoListBusiness
         return _repository.FindAll();
     }
 
-    public ToDoList FindById(long id)
+    public ToDoList FindById(int id)
     {
         return _repository.FindById(id);
     }
 
+
     public ToDoList Create(ToDoList toDoList)
     {
+        
+
         if (toDoList.Status == Enums.ToDoListStatus.Completed)
         {
             throw new Exception("The user cannot create a task with completed status");
@@ -71,7 +75,7 @@ public class ToDoListBusinessImplementation : IToDoListBusiness
         return result;
     }
 
-    public void Delete(long id)
+    public void Delete(int id)
     {
         ToDoList result = FindById(id);
         if (result != null)

@@ -16,9 +16,9 @@ public class ToDoListBusinessImplementation : IToDoListBusiness
         return _repository.FindAll();
     }
 
-    public ToDoList FindById(int id)
+    public ToDoList GetById(int id)
     {
-        return _repository.FindById(id);
+        return _repository.GetById(id);
     }
 
 
@@ -59,7 +59,7 @@ public class ToDoListBusinessImplementation : IToDoListBusiness
     {
         //passou 1 no toDoList.Id para buscar se existe alguma tarefa com esse ID
         //retornou o antigo valor agora o antigo valor esta no existingTask
-        ToDoList existingTask = _repository.FindById(toDoList.Id);  // finds the existing task and saves it in the variable
+        ToDoList existingTask = _repository.GetById(toDoList.Id);  // finds the existing task and saves it in the variable
         if (existingTask == null)
         {
             throw new Exception("Task " + toDoList.Name + " does not exist in database");
@@ -77,7 +77,7 @@ public class ToDoListBusinessImplementation : IToDoListBusiness
 
     public void Delete(int id)
     {
-        ToDoList result = FindById(id);
+        ToDoList result = GetById(id);
         if (result != null)
         {
             _repository.Delete(result);

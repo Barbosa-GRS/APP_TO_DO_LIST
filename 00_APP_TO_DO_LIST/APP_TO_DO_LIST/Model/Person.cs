@@ -27,7 +27,7 @@ public class Person : BaseEntity
     [Column("age")]
     public int Age { get; set; }
 
-    [Column("toDoLists")]
-    public List<ToDoList>  ToDoLists { get; set; }
+    
+    public List<ToDoList>  ToDoLists { get; set; } 
 
 }

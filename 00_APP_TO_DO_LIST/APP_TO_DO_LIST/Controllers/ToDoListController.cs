@@ -38,7 +38,7 @@ public class ToDoListController : ControllerBase
     [ProducesResponseType(401)]
     public IActionResult GetById([FromRoute] int id)
     {
-        return Ok(_business.FindById(id));
+        return Ok(_business.GetById(id));
     }
 
 

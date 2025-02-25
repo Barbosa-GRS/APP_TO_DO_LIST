@@ -63,44 +63,6 @@ public class PersonBusinessImplementation : IPersonBusiness
         return allFieldsFilled || allFieldsEmpty;
     }
 
-
-    //public Person Create(Person person)
-    //{
-    //    if (string.IsNullOrEmpty(person.Name))
-    //    {
-    //        throw new ArgumentException("The name of the person should not be empty", nameof(person.Name));
-    //    }
-    //    else if (person.Name.Length < 10)
-    //    {
-    //        throw new ArgumentException("The name should have more 10 characters", nameof(person.Name));
-    //    }
-
-    //    if (person.Age < 18)
-    //    {
-    //        throw new ArgumentOutOfRangeException(nameof(person.Age), ("Age cannot be less than 18 years"));
-    //    };
-
-    //    if ((!string.IsNullOrEmpty(person.Street)
-    //        && !string.IsNullOrEmpty(person.Number)
-    //        && !string.IsNullOrEmpty(person.ZipCode)
-    //        && !string.IsNullOrEmpty(person.City)
-    //        && !string.IsNullOrEmpty(person.State))
-    //        ||
-    //        ((string.IsNullOrEmpty(person.Street)
-    //        && string.IsNullOrEmpty(person.Number)
-    //        && string.IsNullOrEmpty(person.ZipCode)
-    //        && string.IsNullOrEmpty(person.City)
-    //        && string.IsNullOrEmpty(person.State))))// não finalizado
-    //    {
-    //        return _repository.Create(person);
-    //    }
-    //    else
-    //    {
-    //        throw new Exception("Complete the address");
-    //    }        
-    //}
-
-
     public Person Update(Person person)
     {
         //passou 1 no Person.Id para buscar se existe alguma tarefa com esse ID

@@ -38,23 +38,7 @@ public class ToDoListBusinessImplementation : IToDoListBusiness
         return _repository.Create(toDoList);
 
     }
-
-
-    // antigo valor/ esse esta no banco / existingTask
-    //    {
-    //      "id" : "1",
-    //      "name": "lavar banheiro",
-    //      "description": "lavar banheiro",
-    //      "status": "Pending"
-    //  }
-
-    // novo valor/ esse voce enviou para ser atualizado / toDoList
-    //    {
-    //      "id" : "1",
-    //      "name": "lavar banheiro",
-    //      "description": "lavar banheiro",
-    //      "status": "InProcess"
-    //  }
+        
     public ToDoList Update(ToDoList toDoList)
     {
         //passou 1 no toDoList.Id para buscar se existe alguma tarefa com esse ID

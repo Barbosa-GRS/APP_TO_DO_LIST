@@ -25,10 +25,7 @@ public class BaseRepository <T>: IRepository <T> where T : BaseEntity
     }
 
     // responsible for find all tasks
-    //public List<T> FindAll()
-    //{
-    //    return _dataSet.ToList();
-    //} 
+    
     public List<T> FindAll()
     {
         IQueryable<T> query = _dataSet;
@@ -42,11 +39,7 @@ public class BaseRepository <T>: IRepository <T> where T : BaseEntity
     }
 
     // responsible for find expecific tasks
-    //public T FindById(int id)
-    //{
-    //    return _dataSet.FirstOrDefault(e => e.Id.Equals(id));
-    //}
-
+    
     public T GetById(int id, params Expression<Func<T, object>>[] includes) 
     {
         IQueryable<T> query = _context.Set<T>();

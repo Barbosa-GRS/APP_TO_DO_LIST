@@ -17,16 +17,12 @@ public class MySQLContext : DbContext  //interacts with the database
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         // Configuração da relação entre ToDoList e Person
-        //modelBuilder.Entity<ToDoList>()
-             modelBuilder.Entity<Person>()
-        .HasMany(p => p.ToDoLists)
-        .WithOne(t => t.Person)
-        .HasForeignKey(t => t.PersonId);
 
-        //.HasOne(t => t.Person)            // Relacionamento 1:N
-        //.WithMany(p => p.ToDoLists)       // Uma pessoa tem várias ToDoLists
-        //.HasForeignKey(t => t.PersonId) // PersonId é a chave estrangeira
-        // .OnDelete(DeleteBehavior.Cascade); // Se a pessoa for deletada, apaga as tarefas
+        modelBuilder.Entity<Person>()
+       .HasMany(p => p.ToDoLists)
+       .WithOne(t => t.Person)
+       .HasForeignKey(t => t.PersonId);
+
 
         // Testing convert the int of enum for string in database
 

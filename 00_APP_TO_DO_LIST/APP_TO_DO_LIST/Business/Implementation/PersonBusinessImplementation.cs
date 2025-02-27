@@ -13,7 +13,8 @@ public class PersonBusinessImplementation : IPersonBusiness
     }
     public List<Person> FindAll()
     {
-        return _repository.FindAll();
+
+        return _repository.FindAll(p => p.ToDoLists); // parametro adicionado para incuir ToDoList no person
     }
 
     public Person GetById(int id)

@@ -50,17 +50,6 @@ builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(
     new MySqlServerVersion(new Version (8,0,2))) //add o dbcontext 
 );
 
-//builder.Services.AddDbContext<MySQLContext>(options =>
-//    options.UseMySql(
-//        connection,
-//        ServerVersion.AutoDetect(connection),
-//        mySqlOptions => mySqlOptions.EnableRetryOnFailure(
-//            maxRetryCount: 5,
-//            maxRetryDelay: System.TimeSpan.FromSeconds(30),
-//            errorNumbersToAdd: null
-//        )
-//    )
-//);
 
 
 // add versioning API

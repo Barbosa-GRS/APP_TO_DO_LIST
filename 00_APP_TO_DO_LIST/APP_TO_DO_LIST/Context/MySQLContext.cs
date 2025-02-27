@@ -23,7 +23,6 @@ public class MySQLContext : DbContext  //interacts with the database
        .WithOne(t => t.Person)
        .HasForeignKey(t => t.PersonId);
 
-
         // Testing convert the int of enum for string in database
 
         // Chama o método da classe base (DbContext)

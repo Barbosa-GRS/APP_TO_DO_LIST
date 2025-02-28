@@ -1,7 +1,6 @@
 ﻿using APP_TO_DO_LIST.Model;
 using APP_TO_DO_LIST.Repository.Interface;
-using System;
-
+using System.Linq;
 namespace APP_TO_DO_LIST.Business.Implementation;
 
 public class PersonBusinessImplementation : IPersonBusiness
@@ -24,6 +23,13 @@ public class PersonBusinessImplementation : IPersonBusiness
 
     public Person Create(Person person)
     {
+        //Exist(person);
+
+        if (_repository.Exists(p => p.Name == person.Name))
+        {
+            throw new ArgumentException($"This person: {person.Name} already exists in the database", nameof(person.Name));
+        }
+
         if (string.IsNullOrEmpty(person.Name))
         {
             throw new ArgumentException("The name of the person should not be empty", nameof(person.Name));
@@ -36,13 +42,14 @@ public class PersonBusinessImplementation : IPersonBusiness
         if (person.Age < 18)
         {
             throw new ArgumentOutOfRangeException(nameof(person.Age), ("Age cannot be less than 18 years"));
-        };
+        }
+            ;
 
         if (!IsValidAddress(person))
         {
             throw new ArgumentException("Complete the address or leave all address fields empty.", nameof(person));
-        };
-
+        }
+            ;
 
         return _repository.Create(person);
     }
@@ -92,4 +99,19 @@ public class PersonBusinessImplementation : IPersonBusiness
             _repository.Delete(result);
         }
     }
+
+    //public Person Exist(Person person)
+    //{
+    //    bool exist = _repository.(p => p.Name == person.Name).Any();
+
+    //    //bool exist = _repository.Any(p => p.Name == person.Name);
+    //    if (exist)
+    //    {
+    //        throw new ArgumentException($"This person: {person.Name} already exists in the database", nameof(person.Name));
+    //    }
+
+    //    return person;
 }
+
+
+

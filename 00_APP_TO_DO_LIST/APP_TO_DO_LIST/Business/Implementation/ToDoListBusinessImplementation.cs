@@ -24,7 +24,10 @@ public class ToDoListBusinessImplementation : IToDoListBusiness
 
     public ToDoList Create(ToDoList toDoList)
     {
-        
+        if (_repository.Exists(p => p.Name == toDoList.Name))
+        {
+            throw new ArgumentException($"This person: {toDoList.Name} already exists in the database", nameof(toDoList.Name));
+        }
 
         if (toDoList.Status == Enums.ToDoListStatus.Completed)
         {

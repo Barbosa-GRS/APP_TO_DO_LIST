@@ -7,6 +7,7 @@ using APP_TO_DO_LIST.Model.Base;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 using System.Linq.Expressions;
+using System.Linq;
 
 
 namespace APP_TO_DO_LIST.Repository;
@@ -54,6 +55,7 @@ public class BaseRepository <T>: IRepository <T> where T : BaseEntity
     // responsible for create a new task
     public T Create(T item)
     {
+        
         try
         {
             _dataSet.Add(item);
@@ -97,5 +99,10 @@ public class BaseRepository <T>: IRepository <T> where T : BaseEntity
             throw;
         }
     }
-      
+
+    public bool Exists(Func<T, bool> predicate)
+    {
+        return _dataSet.Any(predicate);
+    }
+
 }

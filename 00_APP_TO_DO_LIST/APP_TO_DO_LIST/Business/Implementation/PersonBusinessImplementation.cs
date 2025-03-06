@@ -100,17 +100,6 @@ public class PersonBusinessImplementation : IPersonBusiness
         }
     }
 
-    //public Person Exist(Person person)
-    //{
-    //    bool exist = _repository.(p => p.Name == person.Name).Any();
-
-    //    //bool exist = _repository.Any(p => p.Name == person.Name);
-    //    if (exist)
-    //    {
-    //        throw new ArgumentException($"This person: {person.Name} already exists in the database", nameof(person.Name));
-    //    }
-
-    //    return person;
 }
 
 

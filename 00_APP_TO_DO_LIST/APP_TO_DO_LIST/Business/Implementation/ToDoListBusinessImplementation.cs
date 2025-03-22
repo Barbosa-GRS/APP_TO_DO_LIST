@@ -1,5 +1,6 @@
 ﻿using APP_TO_DO_LIST.Model;
 using APP_TO_DO_LIST.Repository.Interface;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace APP_TO_DO_LIST.Business.Implementation;
 
@@ -15,13 +16,19 @@ public class ToDoListBusinessImplementation : IToDoListBusiness
         return _repository.FindAll();
     }
 
-    public ToDoList FindById(long id)
+    public ToDoList GetById(int id)
     {
-        return _repository.FindById(id);
+        return _repository.GetById(id);
     }
+
 
     public ToDoList Create(ToDoList toDoList)
     {
+        if (_repository.Exists(p => p.Name == toDoList.Name))
+        {
+            throw new ArgumentException($"This person: {toDoList.Name} already exists in the database", nameof(toDoList.Name));
+        }
+
         if (toDoList.Status == Enums.ToDoListStatus.Completed)
         {
             throw new Exception("The user cannot create a task with completed status");
@@ -34,28 +41,12 @@ public class ToDoListBusinessImplementation : IToDoListBusiness
         return _repository.Create(toDoList);
 
     }
-
-
-    // antigo valor/ esse esta no banco / existingTask
-    //    {
-    //      "id" : "1",
-    //      "name": "lavar banheiro",
-    //      "description": "lavar banheiro",
-    //      "status": "Pending"
-    //  }
-
-    // novo valor/ esse voce enviou para ser atualizado / toDoList
-    //    {
-    //      "id" : "1",
-    //      "name": "lavar banheiro",
-    //      "description": "lavar banheiro",
-    //      "status": "InProcess"
-    //  }
+        
     public ToDoList Update(ToDoList toDoList)
     {
         //passou 1 no toDoList.Id para buscar se existe alguma tarefa com esse ID
         //retornou o antigo valor agora o antigo valor esta no existingTask
-        ToDoList existingTask = _repository.FindById(toDoList.Id);  // finds the existing task and saves it in the variable
+        ToDoList existingTask = _repository.GetById(toDoList.Id);  // finds the existing task and saves it in the variable
         if (existingTask == null)
         {
             throw new Exception("Task " + toDoList.Name + " does not exist in database");
@@ -71,9 +62,9 @@ public class ToDoListBusinessImplementation : IToDoListBusiness
         return result;
     }
 
-    public void Delete(long id)
+    public void Delete(int id)
     {
-        ToDoList result = FindById(id);
+        ToDoList result = GetById(id);
         if (result != null)
         {
             _repository.Delete(result);

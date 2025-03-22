@@ -1,5 +1,6 @@
 using APP_TO_DO_LIST.Business;
 using APP_TO_DO_LIST.Model;
+using APP_TO_DO_LIST.Repository.Interface;
 using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 
@@ -35,9 +36,9 @@ public class ToDoListController : ControllerBase
     [ProducesResponseType(204)]
     [ProducesResponseType(400)]
     [ProducesResponseType(401)]
-    public IActionResult GetById([FromRoute] long id) 
+    public IActionResult GetById([FromRoute] int id)
     {
-        return Ok(_business.FindById(id));
+        return Ok(_business.GetById(id));
     }
 
 
@@ -73,7 +74,7 @@ public class ToDoListController : ControllerBase
     [ProducesResponseType(204)]
     [ProducesResponseType(400)]
     [ProducesResponseType(401)]
-    public IActionResult Delete([FromRoute] long id)
+    public IActionResult Delete([FromRoute] int id)
     {
         _business.Delete(id);
         return NoContent();

@@ -14,9 +14,17 @@ public class MySQLContext : DbContext  //interacts with the database
     public DbSet<ToDoList> ToDoLists { get; set; }  // represent a table in dataset and allows CRUD in class ToDoList
     public DbSet<Person> Persons { get; set; }
 
-    // Testing convert the int of enum for string in database
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        // Configuração da relação entre ToDoList e Person
+
+        modelBuilder.Entity<Person>()
+       .HasMany(p => p.ToDoLists)
+       .WithOne(t => t.Person)
+       .HasForeignKey(t => t.PersonId);
+
+        // Testing convert the int of enum for string in database
+
         // Chama o método da classe base (DbContext)
         base.OnModelCreating(modelBuilder);
 
@@ -28,7 +36,5 @@ public class MySQLContext : DbContext  //interacts with the database
                 v => (ToDoListStatus)Enum.Parse(typeof(ToDoListStatus), v)  // Converte de volta ao recuperar do banco
             );
     }
-
-
 }
 

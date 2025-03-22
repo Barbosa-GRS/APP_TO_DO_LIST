@@ -1,11 +1,15 @@
 using APP_TO_DO_LIST.Business;
 using APP_TO_DO_LIST.Business.Implementation;
 using APP_TO_DO_LIST.Context;
+using APP_TO_DO_LIST.Integration;
+using APP_TO_DO_LIST.Integration.Interface;
+using APP_TO_DO_LIST.Integration.Refit;
 using APP_TO_DO_LIST.Repository;
 using APP_TO_DO_LIST.Repository.Interface;
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Refit;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,9 +50,10 @@ builder.Services.AddSwaggerGen(c =>
 
 var connection = builder.Configuration["MySQLConnection:MySQLConnectionString"]; // get string of connection
 builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(
-    connection, 
-    new MySqlServerVersion(new Version (8,0,2))) //add o dbcontext 
+    connection,
+    new MySqlServerVersion(new Version(8, 0, 2))) //add o dbcontext 
 );
+
 
 
 // add versioning API
@@ -58,11 +63,21 @@ builder.Services.AddApiVersioning();
 
 // add Dependency Injection
 
-builder.Services.AddScoped<IToDoListBusiness,ToDoListBusinessImplementation>();
-builder.Services.AddScoped<IPersonBusiness,PersonBusinessImplementation>();
+builder.Services.AddScoped<IToDoListBusiness, ToDoListBusinessImplementation>();
+builder.Services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
+builder.Services.AddScoped<IViaCepIntegration, ViaCepIntegration>();
 
-builder.Services.AddScoped(typeof(IRepository<>),typeof(BaseRepository<>)); // use typeof for generic form
-builder.Services.AddScoped(typeof(ITaskRepository),typeof(TaskRepository)); // use typeof for generic form
+builder.Services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>)); // use typeof for generic form
+builder.Services.AddScoped(typeof(ITaskRepository), typeof(TaskRepository)); // use typeof for generic form
+builder.Services.AddScoped(typeof(IPersonRepository), typeof(PersonRepository)); // use typeof for generic form
+
+// add Refit
+
+builder.Services.AddRefitClient<IViaCepIntegrationRefit>().
+    ConfigureHttpClient(c =>
+    {
+        c.BaseAddress = new Uri("https://viacep.com.br");
+    });
 
 
 var app = builder.Build();

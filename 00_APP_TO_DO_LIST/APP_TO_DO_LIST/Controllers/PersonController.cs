@@ -36,7 +36,7 @@ public class PersonController : ControllerBase
     [ProducesResponseType(401)]
     public IActionResult GetById([FromRoute] int id)
     {
-        return Ok(_personBusiness.FindById(id));
+        return Ok(_personBusiness.GetById(id));
     }
 
     [HttpPost]

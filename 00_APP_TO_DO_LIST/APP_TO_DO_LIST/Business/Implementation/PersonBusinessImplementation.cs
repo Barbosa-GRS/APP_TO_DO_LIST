@@ -45,31 +45,31 @@ public class PersonBusinessImplementation : IPersonBusiness
         }
             ;
 
-        if (!IsValidAddress(person))
-        {
-            throw new ArgumentException("Complete the address or leave all address fields empty.", nameof(person));
-        }
+        //if (!IsValidAddress(person))
+        //{
+        //    throw new ArgumentException("Complete the address or leave all address fields empty.", nameof(person));
+        //}
             ;
 
         return _repository.Create(person);
     }
 
-    private bool IsValidAddress(Person person)
-    {
-        bool allFieldsFilled = !string.IsNullOrWhiteSpace(person.Street) &&
-                               !string.IsNullOrWhiteSpace(person.Number) &&
-                               !string.IsNullOrWhiteSpace(person.ZipCode) &&
-                               !string.IsNullOrWhiteSpace(person.City) &&
-                               !string.IsNullOrWhiteSpace(person.State);
+    //private bool IsValidAddress(Person person)
+    //{
+    //    bool allFieldsFilled = !string.IsNullOrWhiteSpace(person.Street) &&
+    //                           !string.IsNullOrWhiteSpace(person.Number) &&
+    //                           !string.IsNullOrWhiteSpace(person.ZipCode) &&
+    //                           !string.IsNullOrWhiteSpace(person.City) &&
+    //                           !string.IsNullOrWhiteSpace(person.State);
 
-        bool allFieldsEmpty = string.IsNullOrWhiteSpace(person.Street) &&
-                              string.IsNullOrWhiteSpace(person.Number) &&
-                              string.IsNullOrWhiteSpace(person.ZipCode) &&
-                              string.IsNullOrWhiteSpace(person.City) &&
-                              string.IsNullOrWhiteSpace(person.State);
+    //    bool allFieldsEmpty = string.IsNullOrWhiteSpace(person.Street) &&
+    //                          string.IsNullOrWhiteSpace(person.Number) &&
+    //                          string.IsNullOrWhiteSpace(person.ZipCode) &&
+    //                          string.IsNullOrWhiteSpace(person.City) &&
+    //                          string.IsNullOrWhiteSpace(person.State);
 
-        return allFieldsFilled || allFieldsEmpty;
-    }
+    //    return allFieldsFilled || allFieldsEmpty;
+    //}
 
     public Person Update(Person person)
     {

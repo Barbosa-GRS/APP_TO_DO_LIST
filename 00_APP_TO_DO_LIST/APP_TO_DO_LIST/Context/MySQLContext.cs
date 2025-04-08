@@ -23,6 +23,37 @@ public class MySQLContext : DbContext  //interacts with the database
        .WithOne(t => t.Person)
        .HasForeignKey(t => t.PersonId);
 
+        // Configuração da relação entre Adress e Region
+
+        modelBuilder.Entity<Adress>()
+            .HasOne(a => a.Region)
+            .WithOne(r => r.Adress)
+            .HasForeignKey<Adress>(a => a.RegionId);
+
+        // Configuração da relação entre Adress e ZipCode
+
+        modelBuilder.Entity<Adress>()
+            .HasOne(a => a.ZipCode)
+            .WithOne(z => z.Adress)
+            .HasForeignKey<Adress>(a => a.ZipCodeId);
+
+
+        // Configuração da relação entre region e Coutry
+
+        modelBuilder.Entity<Region>()
+            .HasOne(a => a.Country)
+            .WithOne(c => c.Region)
+            .HasForeignKey<Region>(a => a.CountryId);
+                
+        // Configuração da relação entre Person e Adress
+
+        modelBuilder.Entity<Person>()
+            .HasOne(a => a.Adress)
+            .WithOne(p => p.Person)
+            .HasForeignKey<Person>(a => a.AdressId);
+
+
+
         // Testing convert the int of enum for string in database
 
         // Chama o método da classe base (DbContext)

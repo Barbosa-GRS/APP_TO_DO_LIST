@@ -6,10 +6,14 @@ using APP_TO_DO_LIST.Integration.Interface;
 using APP_TO_DO_LIST.Integration.Refit;
 using APP_TO_DO_LIST.Repository;
 using APP_TO_DO_LIST.Repository.Interface;
+using EvolveDb;
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.Extensions.Options;
+using MySqlConnector;
 using Refit;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -54,6 +58,11 @@ builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(
     new MySqlServerVersion(new Version(8, 0, 2))) //add o dbcontext 
 );
 
+if (builder.Environment.IsDevelopment())
+{
+    MigrateDataBase(connection);
+}
+
 
 
 // add versioning API
@@ -66,10 +75,12 @@ builder.Services.AddApiVersioning();
 builder.Services.AddScoped<IToDoListBusiness, ToDoListBusinessImplementation>();
 builder.Services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
 builder.Services.AddScoped<IViaCepIntegration, ViaCepIntegration>();
+//builder.Services.AddScoped<IAdressBusines, AdressBusinessImplementation>();
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>)); // use typeof for generic form
 builder.Services.AddScoped(typeof(ITaskRepository), typeof(TaskRepository)); // use typeof for generic form
 builder.Services.AddScoped(typeof(IPersonRepository), typeof(PersonRepository)); // use typeof for generic form
+builder.Services.AddScoped(typeof(IAdressRepository), typeof(AdressRepository)); // use typeof for generic form
 
 // add Refit
 
@@ -107,3 +118,21 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+ void MigrateDataBase(string? connection)
+{
+    try
+    {
+        var evolveConection = new MySqlConnection(connection);
+        var evolve = new Evolve(evolveConection, Log.Information)
+        {
+            Locations = new List<string> { "db/migrations", "db/dataset" },
+            IsEraseDisabled = true,
+        };
+        evolve.Migrate();
+    }
+    catch (Exception ex)
+    {
+        Log.Error("Data base falied", ex);
+        throw;
+    };
+}

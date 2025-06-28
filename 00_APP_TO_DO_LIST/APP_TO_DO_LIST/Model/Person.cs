@@ -9,19 +9,16 @@ public class Person : BaseEntity
 {
     
     [Column("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     [Column("age")]
     public int Age { get; set; }
 
     [Column("adressId")]
     public int AdressId { get; set; }
-
-    [JsonIgnore]
+        
     public virtual Adress Adress { get; set; }
 
     public List<ToDoList>  ToDoLists { get; set; }
-
-  
-
+      
 }

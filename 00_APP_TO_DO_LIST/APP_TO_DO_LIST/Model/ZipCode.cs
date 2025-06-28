@@ -1,22 +1,25 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using APP_TO_DO_LIST.Model.Base;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace APP_TO_DO_LIST.Model;
 [Table("zip_code")]
-public class ZipCode
+public class ZipCode : BaseEntity
 {
     [Column("zip_code")]
-    public string ZipCodeNumber { get; set; }
+    public string? ZipCodeNumber { get; set; }
 
     [Column("street")]
-    public string Street { get; set; }
+    public string? Street { get; set; }
 
     [Column("neighborhood")]
-    public string Neighborhood { get; set; }
+    public string? Neighborhood { get; set; }
 
     [Column("city")]
-    public string City { get; set; }
+    public string? City { get; set; }
 
-    public virtual Adress Adress { get; set; } // relação 1:1
+    [JsonIgnore]
+    public virtual List<Adress>? Adresses { get; set; } 
 
 
 }

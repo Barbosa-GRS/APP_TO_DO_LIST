@@ -7,16 +7,17 @@ namespace APP_TO_DO_LIST.Model;
 public class Region : BaseEntity
 {
     [Column("acronym")]
-    public string Acronym { get; set; }
+    public string? Acronym { get; set; }
 
     [Column("regionName")]
-    public string RegionName { get; set; }
+    public string? RegionName { get; set; }
 
     [Column("countryId")]
-    public int CountryId { get; set; }
-
     [ForeignKey("CountryId")]
+    public int CountryId { get; set; }
+        
     public virtual Country Country { get; set; }
 
-    public virtual Adress Adress { get; set; }
+    public virtual ICollection<Adress> Adresses { get; set; }
+
 }

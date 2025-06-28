@@ -13,6 +13,10 @@ public class MySQLContext : DbContext  //interacts with the database
 
     public DbSet<ToDoList> ToDoLists { get; set; }  // represent a table in dataset and allows CRUD in class ToDoList
     public DbSet<Person> Persons { get; set; }
+    public DbSet<Adress> Adresses { get; set; }
+    public DbSet<ZipCode> ZipCodes { get; set; }
+    public DbSet<Region> Regions { get; set; }
+    public DbSet<Country> Countries { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -27,24 +31,24 @@ public class MySQLContext : DbContext  //interacts with the database
 
         modelBuilder.Entity<Adress>()
             .HasOne(a => a.Region)
-            .WithOne(r => r.Adress)
-            .HasForeignKey<Adress>(a => a.RegionId);
+            .WithMany(r => r.Adresses)
+            .HasForeignKey(a => a.RegionId);
 
         // Configuração da relação entre Adress e ZipCode
 
         modelBuilder.Entity<Adress>()
             .HasOne(a => a.ZipCode)
-            .WithOne(z => z.Adress)
-            .HasForeignKey<Adress>(a => a.ZipCodeId);
+            .WithMany(z => z.Adresses)
+            .HasForeignKey(a => a.ZipCodeId);
 
 
         // Configuração da relação entre region e Coutry
 
         modelBuilder.Entity<Region>()
             .HasOne(a => a.Country)
-            .WithOne(c => c.Region)
-            .HasForeignKey<Region>(a => a.CountryId);
-                
+            .WithMany(c => c.Regions)
+            .HasForeignKey(a => a.CountryId);
+
         // Configuração da relação entre Person e Adress
 
         modelBuilder.Entity<Person>()
